@@ -20,8 +20,7 @@ def save_user(username):
 @app.route('/', methods=["GET", "POST"])
 def index():
     """
-    Making page with instructions
-    #Handle POST
+    Handle POST
     """
     if request.method == "POST":
         write_to_file("data/usernames.txt", request.form["username"] + "\n")
@@ -29,5 +28,14 @@ def index():
         return redirect(request.form["username"]) 
     
     return render_template("index.html")    
+
+@app.route('/<username>')
+def user(username):
+    """
+    changes to individual user's homepage
+    """
+    return render_template("riddles.html", username = username)
+    
+
 
 app.run(os.getenv('IP'), port=int(os.getenv('PORT')), debug=True)

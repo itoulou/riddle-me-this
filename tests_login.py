@@ -1,5 +1,5 @@
 import unittest
-import login
+import run
 
 class TestsLogin(unittest.TestCase):
     
@@ -7,7 +7,7 @@ class TestsLogin(unittest.TestCase):
         """
         test to save username into a file
         """
-        login.save_user("test")
+        run.save_user("test")
        
        
         usernames = []
