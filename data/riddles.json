@@ -1,77 +1,77 @@
 [
     {
-        number: "1",
-        question: "I can fall off a building and live, but in water I will die. What am I?",
-        answer: "paper"
-    }    
+        "number": "1",
+        "question": "1. I can fall off a building and live, but in water I will die. What am I?",
+        "answer": "paper"
+    },    
     {
-        number: "2",
-        question: "I am a vegetable that bugs stay away from. What am I?",
-        answer: "squash"
-    }  
+        "number": "2",
+        "question": "2. I am a vegetable that bugs stay away from. What am I?",
+        "answer": "squash"
+    },
     {
-        number: "3",
-        question: "I have hundreds of legs but I can only lean; You make me feel dirty so you feel clean. What am I?",
-        answer: "broom"
-    }
+        "number": "3",
+        "question": "3. I have hundreds of legs but I can only lean; You make me feel dirty so you feel clean. What am I?",
+        "answer": "broom"
+    },
     {
-        number: "4",
-        question: "I can be cracked, made, told, and played. What am I?",
-        answer: "joke"
-    }
+        "number": "4",
+        "question": "4. I can be cracked, made, told, and played. What am I?",
+        "answer": "joke"
+    },
     {
-        number: "5",
-        question: "I am gentle enough to soothe your skin, light enough to fly in the sky, strong enough to crack rocks. What am I?",
-        answer: "water"
-    }
+        "number": "5",
+        "question": "5. I am gentle enough to soothe your skin, light enough to fly in the sky, strong enough to crack rocks. What am I?",
+        "answer": "water"
+    },
     {
-        number: "6",
-        question: "The more you take of me, the more you leave behind. What am I?",
-        answer: "footstep"
-    }
+        "number": "6",
+        "question": "6. The more you take of me, the more you leave behind. What am I?",
+        "answer": "footstep"
+    },
     {
-        number: "7",
-        question: "I shrink smaller every time I take a bath. What am I?",
-        answer: "soap"
-    }
+        "number": "7",
+        "question": "7. I shrink smaller every time I take a bath. What am I?",
+        "answer": "soap"
+    },
     {
-        number: "8",
-        question: "I have a face but no eyes, hands but no arms. What am I?",
-        answer: "clock"
-    }  
+        "number": "8",
+        "question": "8. I have a face but no eyes, hands but no arms. What am I?",
+        "answer": "clock"
+    },  
     {
-        number: "9",
-        question: "The more you take away from me, the bigger I shall get. What am I?",
-        answer: "hole"
-    }  
+        "number": "9",
+        "question": "9. The more you take away from me, the bigger I shall get. What am I?",
+        "answer": "hole"
+    },  
     {
-        number: "10",
-        question: "I jump when I walk and sit when I stand. What am I?",
-        answer: "kangaroo"
-    }  
+        "number": "10",
+        "question": "10. I jump when I walk and sit when I stand. What am I?",
+        "answer": "kangaroo"
+    },  
     {
-        number: "11",
-        question: "You can catch me but cannot throw me. What am I?",
-        answer: "cold"
-    }  
+        "number": "11",
+        "question": "11. You can catch me but cannot throw me. What am I?",
+        "answer": "cold"
+    },  
     {
-        number: "12",
-        question: "I start with "T", ends with "T", and within me is "T". What am I?",
-        answer: "teapot"
-    }  
+        "number": "12",
+        "question": "12. I start with 'T', ends with 'T', and within me is 'T'. What am I?",
+        "answer": "teapot"
+    },  
     {
-        number: "13",
-        question: "Soft, hairy, from door to door. I am the pet that always stays on the floor. What am I?",
-        answer: "carpet"
-    }  
+        "number": "13",
+        "question": "13. Soft, hairy, from door to door. I am the pet that always stays on the floor. What am I?",
+        "answer": "carpet"
+    }, 
     {
-        number: "14",
-        question: "I must be broken before you can use me. What am I?",
-        answer: "egg"
-    }
+        "number": "14",
+        "question": "14. I must be broken before you can use me. What am I?",
+        "answer": "egg"
+    },
     {
-        number: "15",
-        question: "I go up when the rain comes down. What am I?	",
-        answer: "umbrella"
+        "number": "15",
+        "question": "15. I go up when the rain comes down. What am I?",
+        "answer": "umbrella"
     }  
 ]
