@@ -70,9 +70,14 @@ def user(username):
         #Click check button to see if answer is correct
         if request.form["answer"].lower() == data[riddle_index]["answer"]:
             if riddle_index >= counter:
+                """
+                to prevent score increasing if check button pressed multiple
+                times on same question
+                """
                 counter += 1
             
                 return render_template("riddles.html", username = username, data = data[riddle_index]["question"], correct = "Correct!")
+                
             else:
                 return render_template("riddles.html", username = username, data = data[riddle_index]["question"], correct = "You've already answered this question correctly")
 
@@ -137,7 +142,8 @@ def show_leaderboard():
         for username, score in rows:
             table.append("<tr><td>{0}</td><td>{1}</td></tr>".format(username, score))
             row_counter += 1
-            if row_counter == 2:
+            if row_counter == 7:
+                #to stop leaderboard from having too many usernames and scores
                 break
         
         table = "\n{0}\n".format("\n".join(table))    
