@@ -3,21 +3,44 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
 
 <body>
-    <h1>Game Over</h1>
-    <h3> Play again?</h3>
-    <form method="POST">
-        <button name="play-again">Yes</button>
-        <button name="exit-game">Exit</button>
-        <button name="leaderboard">Leaderboard</button>
-    </form>
-    <h3>you scored</h3>
-    <h3>{{ mark }}/15</h3>
+    <div class="row">
+        <div class="col-md-12 exitgame-header text-center">
+            <h1>Game Over</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 exitgame-play-again text-center">
+            <h3> Play again?</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 exitgame-form text-center">
+            <form method="POST">
+                <button name="play-again">Yes</button>
+                <button name="exit-game">Exit</button>
+                <button name="leaderboard">Leaderboard</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 exitgame-score text-center">
+            <h4>you scored</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 exitgame-score text-center">
+            <h2>{{ mark }}/15</h2>
+        </div>
+    </div>
+    
 
 </body>
 

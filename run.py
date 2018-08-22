@@ -43,7 +43,8 @@ def get_all_scores():
     
     with open("data/score.txt", "r") as user_score:
         scores = user_score.readlines()
-    return scores    
+    return map(int, scores)
+    #map(int, scores) to change the score value from string to an int
 
 @app.route('/', methods=["GET", "POST"])
 def index():
@@ -68,15 +69,16 @@ def user(username):
       
     if request.method == "POST" and "check" in request.form:
         #Click check button to see if answer is correct
-        if request.form["answer"].lower() == data[riddle_index]["answer"]:
+        if request.form["answer"].lower().strip() == data[riddle_index]["answer"]:
             if riddle_index >= counter:
                 """
                 to prevent score increasing if check button pressed multiple
                 times on same question
                 """
                 counter += 1
+                riddle_index += 1
             
-                return render_template("riddles.html", username = username, data = data[riddle_index]["question"], correct = "Correct!")
+                return render_template("riddles.html", username = username, data = data[riddle_index]["question"])
                 
             else:
                 return render_template("riddles.html", username = username, data = data[riddle_index]["question"], correct = "You've already answered this question correctly")
@@ -98,7 +100,9 @@ def user(username):
             riddle_index = 0
             save_user(username, "user_played")
             save_score(counter)
-            return render_template("exitgame.html", mark = counter)
+            temp = counter
+            counter = 0
+            return render_template("exitgame.html", mark = temp)
             
             
                 
@@ -132,23 +136,28 @@ def show_leaderboard():
     trimmed_leaderboard = []
     
     for item in leaderboard:
-        trimmed_leaderboard.append((item[0].strip("\n"), item[1].strip("\n")))
+        trimmed_leaderboard.append((item[0].strip("\n"), item[1]))
     
     sorted_leaderboard_by_score = sorted(trimmed_leaderboard, key = operator.itemgetter(1), reverse=True) 
     
     row_counter = 0
+    FULL_HTML = [] #create an array to show final table where every username
+                   #and score is put into
+                   
     for username, rows in groupby(sorted_leaderboard_by_score, operator.itemgetter(0)):
         table = []
+        row_counter += 1
         for username, score in rows:
             table.append("<tr><td>{0}</td><td>{1}</td></tr>".format(username, score))
-            row_counter += 1
-            if row_counter == 7:
-                #to stop leaderboard from having too many usernames and scores
-                break
         
-        table = "\n{0}\n".format("\n".join(table))    
-   
-    return render_template("leaderboard.html", table = table)
+        table = "\n{0}\n".format("\n".join(table))   
+        FULL_HTML.append(table)
+        if row_counter == 7:
+            break
+        # append every row to FULL_HTML
+    
+    return render_template("leaderboard.html", table = "".join(FULL_HTML))
+    # join a new row for every ""
       
     
   
