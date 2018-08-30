@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href={{ url_for( 'static', filename='css/styles.css' ) }} type="text/css" />
+
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -11,36 +13,38 @@
 </head>
 
 <body>
-    <div class="row">
+    <div class="container">
+        <!--<div class="row">-->
         <div class="col-md-12 exitgame-header text-center">
             <h1>Game Over</h1>
         </div>
-    </div>
-    <div class="row">
+        <!--</div>-->
+        <!--<div class="row">-->
         <div class="col-md-12 exitgame-play-again text-center">
             <h3> Play again?</h3>
         </div>
-    </div>
-    <div class="row">
+        <!--</div>-->
+        <!--<div class="row">-->
         <div class="col-md-12 exitgame-form text-center">
             <form method="POST">
-                <button name="play-again">Yes</button>
-                <button name="exit-game">Exit</button>
-                <button name="leaderboard">Leaderboard</button>
+                <button id="play-again" name="play-again">Yes</button>
+                <button id="exit-game" name="exit-game">Exit</button>
+                <button id="leaderboard" name="leaderboard">Leaderboard</button>
             </form>
         </div>
-    </div>
-    <div class="row">
+        <!--</div>-->
+        <!--<div class="row">-->
         <div class="col-md-12 exitgame-score text-center">
-            <h4>you scored</h4>
+            <h4>you scored <span><strong>{{ mark }}</strong></span>/15</h4>
         </div>
+        
+        <!--</div>-->
+        <!--<div class="row">-->
+        <!--<div class="col-md-12 exitgame-score text-center">-->
+        <!--    <h2></h2>-->
+        <!--</div>-->
+        <!--</div>-->
     </div>
-    <div class="row">
-        <div class="col-md-12 exitgame-score text-center">
-            <h2>{{ mark }}/15</h2>
-        </div>
-    </div>
-    
 
 </body>
 

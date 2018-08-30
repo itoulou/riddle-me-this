@@ -1,0 +1,579 @@
+@font-face {
+    font-family: Chilly-cherry;
+    src: url('/static/css/fonts/chilly-cherry/Chilly Cherry DEMO.otf')format("opentype");
+}
+
+body {
+    font-family: Chilly-cherry;
+    background-color: #36454f;
+
+}
+
+.container {
+    min-height: 100vh;
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+
+/*--------------------------------------index header */
+
+.index-header-row {
+    min-width: 100%
+}
+
+.index-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.index-header h1 {
+    color: #fafafa;
+    font-size: 50px;
+    margin-bottom: 8%;
+
+}
+
+
+
+
+/*-----------------------------------index form*/
+
+.index-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.index-form input {
+    margin-bottom: 30px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    font-size: 30px;
+    text-align: center;
+    color: #eab318;
+}
+
+/* center placeholder on all platforms index.html*/
+
+.index-form ::-webkit-input-placeholder {
+    text-align: center;
+    color: #fafafa;
+}
+
+.index-form :-moz-placeholder {
+    /* Firefox 18- */
+    text-align: center;
+    color: #fafafa;
+}
+
+.index-form ::-moz-placeholder {
+    /* Firefox 19+ */
+    text-align: center;
+    color: #fafafa;
+}
+
+.index-form :-ms-input-placeholder {
+    text-align: center;
+    color: #fafafa;
+}
+
+.index-form button {
+    padding: 5px 15px 5px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    margin: auto;
+    font-size: 25px;
+    background-color: #eab318;
+    border: none;
+    border-radius: 25px;
+    color: #fafafa;
+
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+/*-----------------------------------riddle header*/
+
+.riddles-header {
+    width: 100%;
+}
+
+.riddles-header h1 {
+    color: #fafafa;
+    font-size: 100px;
+}
+
+.riddles-header span {
+    color: #eab318;
+}
+
+/* -------------------------------------riddle-questions*/
+
+.riddles-questions {
+    color: #fafafa;
+    letter-spacing: 2.5px;
+
+}
+
+.riddles-questions h3 {
+    font-size: 25px;
+
+}
+
+/* ---------------------------------------riddles-form*/
+
+.riddles-form {
+    width: 100%;
+}
+
+.riddles-form input {
+    width: 66%;
+    background-color: #36454f;
+    border: none;
+    border-bottom: 1px solid;
+    font-size: 30px;
+    color: #eab318;
+    text-align: center;
+    margin: 0 20px 30px 20px;
+}
+
+.riddles-form ::-webkit-input-placeholder {
+    text-align: center;
+    color: #eab318;
+}
+
+.riddles-form :-moz-placeholder {
+    /* Firefox 18- */
+    text-align: center;
+    color: #eab318;
+}
+
+.riddles-form ::-moz-placeholder {
+    /* Firefox 19+ */
+    text-align: center;
+    color: #eab318;
+}
+
+.riddles-form :-ms-input-placeholder {
+    text-align: center;
+    color: #eab318;
+}
+
+/* ---------------------------------------riddles-buttons*/
+
+.riddles-form button {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 30px;
+    color: #fafafa;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0.5px solid;
+    border-color: #eab318;
+    transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+}
+
+#previous {
+    background-color: #eab318;
+    color: #fafafa;
+}
+
+
+#check {
+    background-color: #3ead41;
+    border-color: #3ead41;
+}
+
+#next {
+    background-color: #eab318;
+    color: #fafafa;
+}
+
+
+/* ---------------------------------------riddles-feedback*/
+
+div.riddles-feedback {
+    min-width: 100%;
+}
+
+.riddles-feedback h3 {
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    margin-bottom: 3%;
+    bottom: 0px;
+    padding-bottom: 1%;
+    color: #e13f3f;
+
+
+}
+
+/* ---------------------------------------exitgame header*/
+
+.exitgame-header {
+    width: 100%;
+}
+
+.exitgame-header h1 {
+    color: #fafafa;
+    font-size: 50px;
+
+}
+
+.exitgame-play-again {
+    width: 100%;
+}
+
+.exitgame-play-again h3 {
+    font-size: 20px;
+    color: #eab318;
+    margin-top: -10%;
+
+}
+
+/* ---------------------------------------exitgame form and buttons*/
+
+.exitgame-form {
+    width: 100%;
+    margin-top: -6%;
+}
+
+.exitgame-form button {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #fafafa;
+    border: 2px solid;
+
+}
+
+#play-again {
+    background-color: #3ead41;
+    border-color: #3ead41;
+}
+
+
+#exit-game {
+
+    background-color: #e43333;
+    border-color: #e43333;
+}
+
+
+#leaderboard {
+    background-color: #eab318;
+    border-color: #eab318;
+
+}
+
+
+
+
+/* ---------------------------------------exitgame score*/
+
+.exitgame-score {
+    width: 100%;
+    margin-top: -15%;
+}
+
+.exitgame-score h4 {
+    color: #fafafa;
+    font-size: 30px;
+
+}
+
+.exitgame-score span {
+    color: #eab318;
+    font-size: 40px;
+}
+
+/* ---------------------------------------leaderboard*/
+
+.leaderboard-header {
+    width: 100%;
+}
+
+.leaderboard-header h1 {
+    color: #fafafa;
+    font-size: 60px;
+    margin-bottom: -10%;
+}
+
+.leaderboard-div {
+    width: 100%;
+    margin-bottom: 30%;
+}
+
+#leaderboard-table {
+    border-collapse: collapse;
+    width: 100%
+}
+
+#leaderboard-table th {
+    padding: 10px;
+    text-align: center;
+    color: #fafafa;
+    background-color: #eab318;
+}
+
+#leaderboard-table th,
+#leaderboard-table td {
+    border: 1px solid;
+    padding: 10px;
+    color: #fafafa;
+
+}
+
+#leaderboard-table tr:nth-child(even) {
+    background-color: #36454f;
+}
+
+#leaderboard-table tr:nth-child(odd) {
+    background-color: #eab318;
+}
+
+#leaderboard-table tr:hover {
+    background-color: #ede047;
+}
+
+.return-div {
+    width: 100%;
+}
+
+.return-form {
+    display: flex;
+    justify-content: center;
+    margin-top: -6%;
+}
+
+#return {
+    width: 25%;
+    border-radius: 50px;
+    margin: 0 20px 0 20px;
+    font-size: 15px;
+    color: #fafafa;
+    background-color: #eab318;
+    border: 2px solid;
+    border-color: #eab318;
+
+}
+
+#return:hover {
+    background-color: #eab318;
+    border-color: #eab318;
+}
+
+/* --------------------------------------media queries*/
+
+@media (min-width: 480px) and (max-width: 769px) {
+    .riddles-form button {
+        display: inline;
+        width: 30%;
+        margin: 0 2px 0 2px;
+    }
+    .exitgame-header h1 {
+        color: #fafafa;
+        font-size: 75px;
+
+    }
+    .exitgame-form button {
+        display: inline;
+        width: 30%;
+        margin: 0 2px 0 2px;
+    }
+
+    .exitgame-score {
+        width: 100%;
+        margin-top: -20%;
+    }
+
+    .exitgame-play-again h3 {
+        font-size: 40px;
+        color: #eab318;
+        margin-top: -7%;
+
+    }
+
+    #leaderboard-table {
+        border-collapse: collapse;
+        width: 50%
+    }
+
+    #return {
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 769px) {
+
+    .index-header h1 {
+        color: #fafafa;
+        font-size: 100px;
+    }
+
+    .riddles-questions h3 {
+        font-size: 40px;
+    }
+
+    .riddles-form input {
+        width: 33%;
+        margin: 0 20px 0 20px;
+    }
+
+    .riddles-form button {
+        display: inline-block;
+        width: 13%;
+        border-radius: 50px;
+        border: 2px solid;
+        border-color: #fafafa;
+        margin: 0 20px 0 20px;
+    }
+
+    #previous {
+        background-color: rgba(0, 0, 0, 0);
+        color: #fafafa;
+    }
+
+    #previous:hover {
+        border-color: #eab318;
+        color: #fafafa;
+        background-color: #eab318;
+    }
+    #check {
+        border-color: #fafafa;
+        background-color: rgba(0, 0, 0, 0);
+        color: #fafafa;
+    }
+
+    #check:hover {
+        background-color: #3ead41;
+        border-color: #3ead41;
+    }
+
+    #next {
+        background-color: rgba(0, 0, 0, 0);
+        color: #fafafa;
+    }
+
+    #next:hover {
+        border-color: #eab318;
+        color: #fafafa;
+        background-color: #eab318;
+    }
+
+    .riddles-feedback h3 {
+        font-size: 50px;
+
+    }
+
+    .exitgame-header h1 {
+        font-size: 100px;
+        margin-bottom: -10%;
+
+    }
+
+    .exitgame-play-again h3 {
+        font-size: 40px;
+        margin: 0;
+        margin-bottom: -10%;
+    }
+
+    .exitgame-form button {
+        width: 20%;
+        border-radius: 70px;
+        margin: 0 20px 0 20px;
+        font-size: 30px;
+        color: #fafafa;
+        border: 2px solid;
+        transition: all .2s ease-in-out;
+        -webkit-transition: all .2s ease-in-out;
+        -moz-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+    }
+
+    #play-again {
+        border-color: #fafafa;
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    #play-again:hover {
+
+        background-color: #3ead41;
+        border-color: #3ead41;
+    }
+
+    #exit-game {
+        border-color: #fafafa;
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    #exit-game:hover {
+
+        background-color: #e43333;
+        border-color: #e43333;
+    }
+
+    #leaderboard {
+        border-color: #fafafa;
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    #leaderboard:hover {
+        background-color: #eab318;
+        border-color: #eab318;
+
+    }
+    .leaderboard-header h1 {
+        font-size: 100px;
+
+    }
+    .leaderboard-div {
+        margin-bottom: 2%;
+    }
+
+    #leaderboard-table {
+        width: 50%
+    }
+
+    #leaderboard-table tr:hover {
+        background-color: #ede047;
+    }
+
+    #return {
+        width: 20%;
+        border-radius: 70px;
+        margin: 0 20px 0 20px;
+        font-size: 30px;
+        color: #fafafa;
+        background-color: rgba(0, 0, 0, 0);
+        border: 2px solid;
+        border-color: #fafafa;
+        transition: all .2s ease-in-out;
+        -webkit-transition: all .2s ease-in-out;
+        -moz-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+    }
+
+    #return:hover {
+        background-color: #eab318;
+        border-color: #eab318;
+    }
+
+
+}

@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href={{ url_for( 'static', filename='css/styles.css' ) }} type="text/css" />
+
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -11,20 +13,26 @@
 </head>
 
 <body>
-    <div class="row">
+    <div class="container">
+        <!--<div class="row">-->
         <div class="col-md-12 leaderboard-header text-center">
             <h1>Leaderboard</h1>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12 leaderboard-table text-center">
-            <table align="center">
+        <!--</div>-->
+        <!--<div class="row">-->
+        <div class="col-md-12 leaderboard-div text-center">
+            <table id="leaderboard-table" align="center">
                 <tr>
                     <th>Username</th>
                     <th>Score</th>
                 </tr>
                 {{ table|safe }}
             </table>
+        </div>
+        <div class="return-div">
+            <form method="POST" class="return-form">
+                <button id="return" name="return">Back</button>
+            </form>
         </div>
     </div>
 

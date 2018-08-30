@@ -8,6 +8,8 @@ app = Flask(__name__)
 
 riddle_index = 0
 counter = 0
+final_score = 0
+current_user = ""
 
 
 def write_to_file(filename, data):
@@ -48,20 +50,23 @@ def get_all_scores():
 
 @app.route('/', methods=["GET", "POST"])
 def index():
+    global current_user
     """
     send username to usernames.txt file and send to user's homepage
     """
     if request.method == "POST":
         write_to_file("data/usernames.txt", request.form["username"] + "\n")
-        
+        current_user = request.form["username"]
         return redirect(request.form["username"]) 
     
     return render_template("index.html")    
 
 @app.route('/<username>', methods = ["GET", "POST"])
 def user(username):
-    global riddle_index, counter
+    global riddle_index, counter, final_score, current_user
     data = []
+    
+    
     
     with open("data/riddles.json", "r") as json_data:
         data = json.load(json_data)
@@ -77,6 +82,18 @@ def user(username):
                 """
                 counter += 1
                 riddle_index += 1
+                 
+                if len(data) == riddle_index:
+                    #move to exitgame.html page if game is finished
+                    #save username to user_played.txt for leaderboard
+                    #save score to score.txt
+                    riddle_index = 0
+                    save_user(username, "user_played")
+                    save_score(counter)
+                    final_score = counter
+                    counter = 0
+                    return redirect(url_for('show_exitgame'))
+                
             
                 return render_template("riddles.html", username = username, data = data[riddle_index]["question"])
                 
@@ -100,9 +117,9 @@ def user(username):
             riddle_index = 0
             save_user(username, "user_played")
             save_score(counter)
-            temp = counter
+            final_score = counter
             counter = 0
-            return render_template("exitgame.html", mark = temp)
+            return redirect(url_for('show_exitgame'))
             
             
                 
@@ -114,19 +131,45 @@ def user(username):
         if len(data) < 0:
             riddle_index = 0
         return render_template("riddles.html", username = username, data = data[riddle_index]["question"])
+    
+    if request.method == "POST" and "play-again" in request.form:
+        return redirect('/<username>')
 
     if request.method == "POST" and "exit-game" in request.form:
-                return render_template("index.html") 
+        return redirect("/") 
     
     if request.method == "POST" and "leaderboard" in request.form:
-                return redirect('/leaderboard')             
+        return redirect('/leaderboard')             
     
     return render_template("riddles.html", username = username, data = data[riddle_index]["question"])
     
-   
-@app.route('/leaderboard', methods = ["GET"])
+@app.route('/exitgame', methods = ["GET", "POST"])
+def show_exitgame():
+    
+    global current_user
+    
+    if request.method == "POST" and "play-again" in request.form:
+        
+        return redirect('/{0}'.format(current_user))
+
+    if request.method == "POST" and "exit-game" in request.form:
+        return redirect("/") 
+    
+    if request.method == "POST" and "leaderboard" in request.form:
+        return redirect('/leaderboard') 
+        
+    return render_template("exitgame.html", mark = final_score)    
+    
+
+@app.route('/leaderboard', methods = ["GET", "POST"])
 def show_leaderboard():
     
+    global final_score
+    
+    if request.method == "POST" and "return" in request.form:
+        return redirect("/exitgame")
+        
+   
     
     scores = get_all_scores()
     
@@ -146,12 +189,15 @@ def show_leaderboard():
                    
     for username, rows in groupby(sorted_leaderboard_by_score, operator.itemgetter(0)):
         table = []
-        row_counter += 1
+        
         for username, score in rows:
             table.append("<tr><td>{0}</td><td>{1}</td></tr>".format(username, score))
-        
+            row_counter += 1
+            if row_counter == 7:
+                break
         table = "\n{0}\n".format("\n".join(table))   
         FULL_HTML.append(table)
+        
         if row_counter == 7:
             break
         # append every row to FULL_HTML

@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
-
-
+    <link rel="stylesheet" href={{ url_for( 'static', filename='css/styles.css' ) }} type="text/css" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -13,30 +12,32 @@
 </head>
 
 <body>
-    <div class="row">
-        <div class="col-md-12 riddles-header text-center">
-            <h1>Hi {{ username }} </h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12 riddles-questions text-center">
-            <h3>{{ data }}</h3>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12 riddles-form text-center">
-            <form method="POST">
-                <input type="text" placeholder="Your answer" name="answer">
-                <button name="previous">Previous</button>
-                <button id="check" name="check">Check</button>
-                <button name="next">Next</button>
-            </form>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12 riddles-questions text-center">
-            <h3>{{ correct }}</h3>
-        </div>
+    <div class="container">
+        <!--<div class="row">-->
+            <div class="col-md-12 riddles-header text-center">
+                <h1>Hi<span class="username-header"> {{ username }} </span></h1>
+            </div>
+        <!--</div>-->
+        <!--<div class="row">-->
+            <div class="col-md-12 riddles-questions text-center">
+                <h3>{{ data }}</h3>
+            </div>
+        <!--</div>-->
+        <!--<div class="row">-->
+            <div class="col-md-12 riddles-form text-center">
+                <form method="POST">
+                    <input type="text" placeholder="Your answer" name="answer">
+                    <button id="previous" name="previous">Previous</button>
+                    <button id="check" name="check">Check</button>
+                    <button id="next" name="next">Next</button>
+                </form>
+            </div>
+        <!--</div>-->
+        <!--<div class="row">-->
+            <div class="riddles-feedback text-center">
+                <h3>{{ correct }}</h3>
+            </div>
+        <!--</div>-->
     </div>
 </body>
 
