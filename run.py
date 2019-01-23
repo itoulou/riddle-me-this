@@ -32,7 +32,9 @@ def save_score(counter):
     write_to_file("data/score.txt", "{0}\n".format(counter))
 
 def get_all_users_played():
-    
+    """
+    function which returns all user
+    """
     users = []
     
     with open("data/user_played.txt", "r") as user_played:
@@ -40,7 +42,9 @@ def get_all_users_played():
     return users    
         
 def get_all_scores():
-    
+    """
+    function that returns all scores
+    """
     scores = []
     
     with open("data/score.txt", "r") as user_score:
@@ -63,14 +67,14 @@ def index():
 
 @app.route('/<username>', methods = ["GET", "POST"])
 def user(username):
-    global riddle_index, counter, final_score, current_user
+    """
+    displays riddles and handles answers. Score and riddle_index
+    is incremented by 1 if answer is correct. User can move to next question.
+    """
+    global riddle_index, counter, final_score
     data = []
-    
-    
-    
     with open("data/riddles.json", "r") as json_data:
         data = json.load(json_data)
-        
       
     if request.method == "POST" and "check" in request.form:
         #Click check button to see if answer is correct
@@ -93,14 +97,12 @@ def user(username):
                     final_score = counter
                     counter = 0
                     return redirect(url_for('show_exitgame'))
-                
             
                 return render_template("riddles.html", username = username, data = data[riddle_index]["question"])
                 
             else:
                 return render_template("riddles.html", username = username, data = data[riddle_index]["question"], correct = "You've already answered this question correctly")
-
-            
+                
         else:
            #if answer is incorrect 
             return render_template("riddles.html", username = username, data = data[riddle_index]["question"], correct = "Wrong answer, try again")
@@ -120,8 +122,6 @@ def user(username):
             final_score = counter
             counter = 0
             return redirect(url_for('show_exitgame'))
-            
-            
                 
         return render_template("riddles.html", username = username, data = data[riddle_index]["question"])
     
@@ -145,9 +145,10 @@ def user(username):
     
 @app.route('/exitgame', methods = ["GET", "POST"])
 def show_exitgame():
-    
-    global current_user
-    
+    """
+    shows score of the user where user can replay, exit game or
+    look at the leaderboard
+    """
     if request.method == "POST" and "play-again" in request.form:
         
         return redirect('/{0}'.format(current_user))
@@ -163,13 +164,12 @@ def show_exitgame():
 
 @app.route('/leaderboard', methods = ["GET", "POST"])
 def show_leaderboard():
-    
-    global final_score
-    
+    """
+    adds user and their score to leaderboard
+    if score is within the 7th highest
+    """
     if request.method == "POST" and "return" in request.form:
         return redirect("/exitgame")
-        
-   
     
     scores = get_all_scores()
     
@@ -204,7 +204,5 @@ def show_leaderboard():
     
     return render_template("leaderboard.html", table = "".join(FULL_HTML))
     # join a new row for every ""
-      
-    
   
 app.run(os.getenv('IP'), port=int(os.getenv('PORT')), debug=True)
