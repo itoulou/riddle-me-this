@@ -265,17 +265,10 @@ div.riddles-feedback {
     border: 2px solid;
 
 }
-
-#play-again {
-    background-color: #3ead41;
-    border-color: #3ead41;
-}
-
-
 #exit-game {
 
-    background-color: #e43333;
-    border-color: #e43333;
+    background-color: #3ead41;
+    border-color: #3ead41;
 }
 
 
@@ -506,7 +499,7 @@ div.riddles-feedback {
 
     .exitgame-form button {
         width: 20%;
-        border-radius: 70px;
+        border-radius: 10px;
         margin: 0 20px 0 20px;
         font-size: 30px;
         color: #fafafa;
@@ -516,18 +509,7 @@ div.riddles-feedback {
         -moz-transition: all .2s ease-in-out;
         -o-transition: all .2s ease-in-out;
     }
-
-    #play-again {
-        border-color: #fafafa;
-        background-color: rgba(0, 0, 0, 0);
-    }
-
-    #play-again:hover {
-
-        background-color: #3ead41;
-        border-color: #3ead41;
-    }
-
+    
     #exit-game {
         border-color: #fafafa;
         background-color: rgba(0, 0, 0, 0);
@@ -535,10 +517,10 @@ div.riddles-feedback {
 
     #exit-game:hover {
 
-        background-color: #e43333;
-        border-color: #e43333;
+        background-color: #3ead41;
+        border-color: #3ead41;
     }
-
+    
     #leaderboard {
         border-color: #fafafa;
         background-color: rgba(0, 0, 0, 0);

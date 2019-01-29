@@ -126,14 +126,15 @@ def user(username):
         return render_template("riddles.html", username = username, data = data[riddle_index]["question"])
     
     elif request.method == "POST" and "previous" in request.form:
-        #to previous riddle
-        riddle_index -= 1
-        if len(data) < 0:
+        if riddle_index >= 1:
+            #to previous riddle
+            riddle_index -= 1
+            if len(data) < 0:
+                riddle_index = 0
+            return render_template("riddles.html", username = username, data = data[riddle_index]["question"])
+        else:
             riddle_index = 0
-        return render_template("riddles.html", username = username, data = data[riddle_index]["question"])
-    
-    if request.method == "POST" and "play-again" in request.form:
-        return redirect('/<username>')
+            return render_template("riddles.html", username = username, data = data[riddle_index]["question"])
 
     if request.method == "POST" and "exit-game" in request.form:
         return redirect("/") 
@@ -150,7 +151,6 @@ def show_exitgame():
     look at the leaderboard
     """
     if request.method == "POST" and "play-again" in request.form:
-        
         return redirect('/{0}'.format(current_user))
 
     if request.method == "POST" and "exit-game" in request.form:
