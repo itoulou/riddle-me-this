@@ -198,7 +198,7 @@ button:focus {
 }
 
 .next-i {
-   display: none;
+    display: none;
 }
 
 
@@ -456,20 +456,20 @@ div.riddles-feedback {
         border: 2px solid;
         border-color: #fafafa;
     }
-    
+
     .previous-check-i {
         display: inline;
         position: relative;
         right: 15px;
     }
-    
+
     .next-i {
         display: inline;
         position: relative;
         left: 15px;
     }
 
-    
+
     #previous {
         background-color: rgba(0, 0, 0, 0);
         color: #fafafa;
