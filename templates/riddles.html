@@ -19,12 +19,16 @@
         <div class="col-md-12 riddles-questions text-center">
             <h3>{{ data }}</h3>
         </div>
-        <div class="col-md-12 riddles-form text-center">
+        <div class="col-xs-12 riddles-form text-center">
             <form method="POST">
-                <input type="text" placeholder="Your answer" name="answer">
-                <button id="previous" name="previous">Previous</button>
-                <button id="check" name="check">Check</button>
-                <button id="next" name="next">Next</button>
+                <div class="col-xs-12 col-md-4">
+                    <input type="text" placeholder="Your answer" name="answer">
+                </div>
+                <div class="col-xs-12 col-md-8">
+                    <button id="previous" name="previous"><i class="glyphicon glyphicon-chevron-left previous-check-i"></i>Previous</button>
+                    <button id="check" name="check"><i class="glyphicon glyphicon-ok previous-check-i"></i>Check</button>
+                    <button id="next" name="next">Next<i class="glyphicon glyphicon-chevron-right next-i"></i></button>
+                </div>
             </form>
         </div>
 

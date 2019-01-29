@@ -57,7 +57,7 @@ body {
     border: none;
     font-size: 30px;
     text-align: center;
-    color: #eab318;
+    color: #ff9235;
 }
 
 /* center placeholder on all platforms index.html*/
@@ -91,7 +91,7 @@ body {
     align-content: center;
     margin: auto;
     font-size: 25px;
-    background-color: #eab318;
+    background-color: #ff9235;
     border: none;
     border-radius: 25px;
     color: #fafafa;
@@ -117,7 +117,7 @@ button:focus {
 }
 
 .riddles-header span {
-    color: #eab318;
+    color: #ff9235;
 }
 
 /* -------------------------------------riddle-questions*/
@@ -145,31 +145,31 @@ button:focus {
     border: none;
     border-bottom: 1px solid;
     font-size: 30px;
-    color: #eab318;
+    color: #ff9235;
     text-align: center;
     margin: 0 20px 30px 20px;
 }
 
 .riddles-form ::-webkit-input-placeholder {
     text-align: center;
-    color: #eab318;
+    color: #ff9235;
 }
 
 .riddles-form :-moz-placeholder {
     /* Firefox 18- */
     text-align: center;
-    color: #eab318;
+    color: #ff9235;
 }
 
 .riddles-form ::-moz-placeholder {
     /* Firefox 19+ */
     text-align: center;
-    color: #eab318;
+    color: #ff9235;
 }
 
 .riddles-form :-ms-input-placeholder {
     text-align: center;
-    color: #eab318;
+    color: #ff9235;
 }
 
 /* ---------------------------------------riddles-buttons*/
@@ -181,15 +181,29 @@ button:focus {
     color: #fafafa;
     background-color: rgba(0, 0, 0, 0);
     border: 0.5px solid;
-    border-color: #eab318;
+    border-color: #ff9235;
     transition: all .2s ease-in-out;
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     -o-transition: all .2s ease-in-out;
 }
 
+.riddles-form i {
+    font-size: 20px;
+}
+
+
+.previous-check-i {
+    display: none;
+}
+
+.next-i {
+   display: none;
+}
+
+
 #previous {
-    background-color: #eab318;
+    background-color: #ff9235;
     color: #fafafa;
 }
 
@@ -200,7 +214,7 @@ button:focus {
 }
 
 #next {
-    background-color: #eab318;
+    background-color: #ff9235;
     color: #fafafa;
 }
 
@@ -242,7 +256,7 @@ div.riddles-feedback {
 
 .exitgame-play-again h3 {
     font-size: 20px;
-    color: #eab318;
+    color: #ff9235;
     margin-top: -10%;
 
 }
@@ -277,8 +291,8 @@ div.riddles-feedback {
 
 
 #leaderboard {
-    background-color: #eab318;
-    border-color: #eab318;
+    background-color: #ff9235;
+    border-color: #ff9235;
 
 }
 
@@ -299,7 +313,7 @@ div.riddles-feedback {
 }
 
 .exitgame-score span {
-    color: #eab318;
+    color: #ff9235;
     font-size: 40px;
 }
 
@@ -329,7 +343,7 @@ div.riddles-feedback {
     padding: 10px;
     text-align: center;
     color: #fafafa;
-    background-color: #eab318;
+    background-color: #ff9235;
 }
 
 #leaderboard-table th,
@@ -345,7 +359,7 @@ div.riddles-feedback {
 }
 
 #leaderboard-table tr:nth-child(odd) {
-    background-color: #eab318;
+    background-color: #ff9235;
 }
 
 #leaderboard-table tr:hover {
@@ -368,20 +382,20 @@ div.riddles-feedback {
     margin: 0 20px 0 20px;
     font-size: 15px;
     color: #fafafa;
-    background-color: #eab318;
+    background-color: #ff9235;
     border: 2px solid;
-    border-color: #eab318;
+    border-color: #ff9235;
 
 }
 
 #return:hover {
-    background-color: #eab318;
-    border-color: #eab318;
+    background-color: #ff9235;
+    border-color: #ff9235;
 }
 
 /* --------------------------------------media queries*/
 
-@media (min-width: 480px) and (max-width: 769px) {
+@media (min-width: 480px) {
     .riddles-form button {
         display: inline;
         width: 30%;
@@ -405,7 +419,7 @@ div.riddles-feedback {
 
     .exitgame-play-again h3 {
         font-size: 40px;
-        color: #eab318;
+        color: #ff9235;
         margin-top: -7%;
 
     }
@@ -432,28 +446,39 @@ div.riddles-feedback {
     }
 
     .riddles-form input {
-        width: 33%;
+        width: 100%;
         margin: 0 20px 0 20px;
     }
 
     .riddles-form button {
         display: inline-block;
-        width: 13%;
-        border-radius: 50px;
+        border-radius: 10px;
         border: 2px solid;
         border-color: #fafafa;
-        margin: 0 20px 0 20px;
+    }
+    
+    .previous-check-i {
+        display: inline;
+        position: relative;
+        right: 15px;
+    }
+    
+    .next-i {
+        display: inline;
+        position: relative;
+        left: 15px;
     }
 
+    
     #previous {
         background-color: rgba(0, 0, 0, 0);
         color: #fafafa;
     }
 
     #previous:hover {
-        border-color: #eab318;
+        border-color: #ff9235;
         color: #fafafa;
-        background-color: #eab318;
+        background-color: #ff9235;
     }
     #check {
         border-color: #fafafa;
@@ -472,9 +497,9 @@ div.riddles-feedback {
     }
 
     #next:hover {
-        border-color: #eab318;
+        border-color: #ff9235;
         color: #fafafa;
-        background-color: #eab318;
+        background-color: #ff9235;
     }
 
     .riddles-feedback h3 {
@@ -535,8 +560,8 @@ div.riddles-feedback {
     }
 
     #leaderboard:hover {
-        background-color: #eab318;
-        border-color: #eab318;
+        background-color: #ff9235;
+        border-color: #ff9235;
 
     }
     .leaderboard-header h1 {
@@ -571,8 +596,8 @@ div.riddles-feedback {
     }
 
     #return:hover {
-        background-color: #eab318;
-        border-color: #eab318;
+        background-color: #ff9235;
+        border-color: #ff9235;
     }
 
 
