@@ -79,7 +79,7 @@ body {
 }
 
 .index-form button {
-    padding: 5px 15px 5px 15px;
+    padding: 2px 0;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
@@ -87,8 +87,10 @@ body {
     font-size: 25px;
     background-color: #ff9235;
     border: none;
-    border-radius: 25px;
+    border-radius: 5px;
     color: #fafafa;
+    width: 50%;
+    justify-content: center;
 
 }
 
