@@ -79,11 +79,11 @@ def user(username):
     if request.method == "POST" and "check" in request.form:
         #Click check button to see if answer is correct
         if request.form["answer"].lower().strip() == data[riddle_index]["answer"]:
+            """
+            to prevent score increasing if check button pressed multiple
+            times on same question
+            """
             if riddle_index >= counter:
-                """
-                to prevent score increasing if check button pressed multiple
-                times on same question
-                """
                 counter += 1
                 riddle_index += 1
                  
@@ -104,8 +104,10 @@ def user(username):
                 return render_template("riddles.html", username = username, data = data[riddle_index]["question"], correct = "You've already answered this question correctly")
                 
         else:
-           #if answer is incorrect 
-            return render_template("riddles.html", username = username, data = data[riddle_index]["question"], correct = "Wrong answer, try again")
+           #if answer is incorrect
+           if request.form["answer"] == "":
+               return render_template("riddles.html", username = username, data = data[riddle_index]["question"], correct = "Enter your answer")
+           return render_template("riddles.html", username = username, data = data[riddle_index]["question"], correct = "Wrong answer, try again")
             
     elif request.method == "POST" and "next" in request.form:
         #to next riddle
@@ -134,7 +136,7 @@ def user(username):
             return render_template("riddles.html", username = username, data = data[riddle_index]["question"])
         else:
             riddle_index = 0
-            return render_template("riddles.html", username = username, data = data[riddle_index]["question"])
+            return render_template("riddles.html", username = username, data = data[riddle_index]["question"], correct="You're only on the first question")
 
     if request.method == "POST" and "exit-game" in request.form:
         return redirect("/") 
