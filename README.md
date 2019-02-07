@@ -21,6 +21,16 @@ so this web application has an easy-on-the-eye and simple colour scheme. It is
 also responsive on several screen widths and browsers to make sure anybody can
 play anywhere.
 
+### Riddles
+__md/lg__
+
+![riddles image](/wireframes/images/riddles-md-lg.png "riddles md lg")
+
+__xs/sm__
+
+![riddles image](/wireframes/images/riddles-xs-sm.png "riddles xs sm")
+
+
 # Features
 ### Homepage
 * __Enter username__
